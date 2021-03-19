@@ -47,7 +47,7 @@ $(document).ready(function () {
         console.log("button clicked");
         var a = $("input").val();
         console.log("Original Amount: " + a)
-        var b = a * 0.15;
+        var b = a * 0.20;
         var finalTip = (Math.round(b * 100) / 100)
         console.log("Tip Amount: " + finalTip);
 
