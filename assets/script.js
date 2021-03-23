@@ -44,19 +44,29 @@ $(document).ready(function () {
             return result / precision;
         }
 
+        // Test if Button works
         console.log("button clicked");
+
+        // Assign input value to variable "a"
         var a = $("input").val();
         console.log("Original Amount: " + a)
+
+        // Determine 20$ tip value of variable "a" and assign it to variable "b"
         var b = a * 0.20;
         var finalTip = (Math.round(b * 100) / 100)
         console.log("Tip Amount: " + finalTip);
 
+        // Determine value of a + b, or input amount and tip amount
         var finalUnroundedAmount = doDecimalSafeMath(a, '+', b);
         console.log(finalUnroundedAmount);
         var finalAmount = (Math.round(finalUnroundedAmount * 100) / 100);
 
+        // Populate page HTML with values
         $("#tipAmount").html("Tip: $" + finalTip);
         $("#finalAmount").html("Total Cost: $" + finalAmount);
-        //console.log("Final Amount: " + finalAmount)
+
+        if (finalAmount > 20.0) {
+            alert("Whoa, you're not made of money. Calm down on the beer, okay?")
+        };
     })
 })
